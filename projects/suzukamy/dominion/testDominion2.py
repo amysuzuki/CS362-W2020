@@ -15,10 +15,15 @@ player_names = ["Annie","*Ben","*Carla"]
 nV, nC = testUtility.curseAndVictoryNum(player_names)
 
 #Get Box
-box = testUtility.getBox(nV)
+box = {}
+box["Woodcutter"] = [Dominion.Woodcutter()] * 10
+box["Smithy"] = [Dominion.Smithy()] * 10
+
+
 
 #Get the supply order
 supply_order = testUtility.getSupplyOrder()
+
 
 #Get the supply
 supply = testUtility.getSupply(player_names, box, nV, nC)
@@ -27,8 +32,7 @@ supply = testUtility.getSupply(player_names, box, nV, nC)
 trash = []
 
 #Costruct the Player objects
-players = testUtility.getPlayers(["Annie","*Ben","*Carla", "*Sue", "Ron"])
-
+players = testUtility.getPlayers(player_names)
 
 #Play the game
 turn  = 0
